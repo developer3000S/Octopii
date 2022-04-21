@@ -71,13 +71,18 @@ Not a valid image format: pii_list/aadhaar/aadhaar-8.gif
 ## Contributing
 Open-source projects like these thrive on community support. Since piiscan relies heavily on machine learning and optical character recognition,  contributions are much appreciated. Here's how to contribute:
 
-1. Fork the official repository at https://github.com/redhuntlabs/piiscan
-2. There are 3 files in the `models/` directory. 
+### 1. Fork 
+
+Fork the official repository at https://github.com/redhuntlabs/piiscan
+
+### 2. Understand
+
+There are 3 files in the `models/` directory. 
     - The `keras_models.h5` file is the Keras h5 model that can be obtained from Google's Teachable Machine or via Keras in Python.
     - The `labels.txt` file contains the list of labels corresponding to the index that the model returns. 
     - The `ocr_list.json` file consists of keywords to search for during an OCR scan, as well as other miscellaneous information such as country of origin, regular expressions etc.
 
-### Generating models via Teachable Machine
+#### Generating models via Teachable Machine
 Since our current dataset is quite small, we could benefit from a large Keras model of international PII for this project. If you do not have expertise in Keras, Google provides an extremely easy to use model generator called the Teachable Machine. To use it:
 - Visit https://teachablemachine.withgoogle.com/train and select 'Image Project' → 'Standard Image Model'.
 - A few classes are visible. Rename the class to an asset type ypu'd like to upload, such as "German Passport" or "California Driver License".
@@ -93,15 +98,20 @@ Since our current dataset is quite small, we could benefit from a large Keras mo
 
 The images used for the model above are not visible to us since they're in a proprietary format. You can use both dummy and actual PII. Make sure they are square-ish in image size. 
 
-### Updating OCR list
+#### Updating OCR list
 Once you generate models using Teachable Machine, you can improve piiscan's accuracy via OCR. To do this:
 - Open the existing `ocr_list.json` file. Create a JSONObject with the key having the same name as the asset class. **NOTE: The key name must be exactly the same as the asset class name from Teachable Machine.**
 - For the `keywords`, use as many unique terms from your asset as possible, such as "Income Tax Department". Store them in a JSONArray.
 - *(Advanced)* you can also add regexes for things like ID numbers and MRZ on passports if they are unique enough. Use https://regex101.com to test your regexes before adding them.
 - Save/overwrite the existing `ocr_list.json` file.
 
-3. You can replace each file you modify in the `models/` directory after you create or edit them via the above methods.
-4. Submit a pull request from your forked repo and we'll pick it up and replace our current model with it if the changes are large enough.
+### 3. Edit
+
+You can replace each file you modify in the `models/` directory after you create or edit them via the above methods.
+
+### 4. Pull request
+
+Submit a pull request from your forked repo and we'll pick it up and replace our current model with it if the changes are large enough.
 
 **Note:** Please take the following steps to ensure quality
 - Make sure the model returns extremely accurate results by testing it locally first. 
