@@ -85,7 +85,7 @@ Since our current dataset is quite small, we could benefit from a large Keras mo
 
 *Tip: segregate your image assets into folders with the folder name being the same as the class name. You can then drag and drop a folder into the upload dialog.*
 
-**NOTE: Only upload the same as the class name, for example, German Passport class must have German Passport pictures. Uploading the wrong data to the wrong class will confuse the machine learning algorithms.** 
+**NOTE: Only upload the same as the class name, for example, the German Passport class must have German Passport pictures. Uploading the wrong data to the wrong class will confuse the machine learning algorithms.** 
 - Click '+ Add a class' at the bottom of the page to add more classes with data and repeat. You can make the classes more specific, such as "Goa Driver License Old Format".
 - Verify the classes and images one last time. Once you're ready, click on the 'Train Model' button. You can increase the epoch size (such as 5000) to improve model accuracy.
 - To test, you can test the model by clicking the Input dropdown and selecting 'File', then uploading a sample image.
@@ -101,7 +101,7 @@ Once you generate models using Teachable Machine, you can improve piiscan's accu
 - Save/overwrite the existing `ocr_list.json` file.
 
 3. You can replace each file you modify in the `models/` directory after you create or edit them via the above methods.
-4. Submit a pull request from your forked repo and we'll pick it up and add it to our current model.
+4. Submit a pull request from your forked repo and we'll pick it up and replace our current model with it if the changes are large enough.
 
 **Note:** Please take the following steps to ensure quality
 - Make sure the model returns extremely accurate results by testing it locally first. 
