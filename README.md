@@ -1,19 +1,25 @@
 # Piiscan
 
-Piiscan is an AI-powered Personal Identifiable Information (PII) scanner that can look for Government IDs, passports, photos and signatures in a directory.
+Piiscan is an open-source AI-powered Personal Identifiable Information (PII) scanner that can look for Government IDs, passports, photos and signatures in a directory.
 
 ## Working
 Piiscan uses Tesseract's Optical Character Recognition (OCR) and Keras' Convolutional Neural Networks (CNN) models to detect various forms of personal identifiable information that may be leaked on a publicly facing location. This is done via:
 
 1. Importing and cleaning image(s)
 
-The image is imported via OpenCV and is cleaned, deskewed and rotated for scanning.
+The image is imported via OpenCV and Python Imaging Library (PIL) and is cleaned, deskewed and rotated for scanning.
 
-2. Performing image classification
+2. Performing image classification and Optical Character Recognition (OCR)
 
-The image is scanned for features such as an ISO/IEC 7810 card specification, colors, location of text, photos, holograms etc. This is done by passing it anf comparing it against a trained model.
+The image is scanned for features such as an ISO/IEC 7810 card specification, colors, location of text, photos, holograms etc. This is done by passing it and comparing it against a trained model. This may be done in four parts:
 
-3. Optical Character Recognition (OCR)
+- **Best case** (score >=90): The image is sent into the image classifier algorithm to be scanned for features such as an ISO/IEC 7810 card specification, colors, location of text, photos, holograms etc. If it is successfully classified as a type of PII, OCR is performed on it looking for particular words and strings as a final check. When both of these are confirmed, the result from Piiscan is extremely reliable.
+
+- **Average case** (score >=50): The image is partially/incorrectly identified by the image classifier algorithm, but an OCR check finds contradicting substrings and reclassifies it. 
+
+- **Worst case** (score >=0): The image is only identified by the image classifier algorithm and no OCR check is performed on it. 
+
+- **Incorrect classification**: False positives due to a very small model or OCR list may incorrectly classify PIIs, giving inaccurate results. 
 
 As a final verification method, images are scanned for certain strings to verify the accuracy of the model.
 
@@ -90,7 +96,8 @@ Since our current dataset is quite small, we could benefit from a large Keras mo
 
 *Tip: segregate your image assets into folders with the folder name being the same as the class name. You can then drag and drop a folder into the upload dialog.*
 
-**NOTE: Only upload the same as the class name, for example, the German Passport class must have German Passport pictures. Uploading the wrong data to the wrong class will confuse the machine learning algorithms.** 
+**Note: Only upload the same as the class name, for example, the German Passport class must have German Passport pictures. Uploading the wrong data to the wrong class will confuse the machine learning algorithms.** 
+
 - Click '+ Add a class' at the bottom of the page to add more classes with data and repeat. You can make the classes more specific, such as "Goa Driver License Old Format".
 - Verify the classes and images one last time. Once you're ready, click on the 'Train Model' button. You can increase the epoch size (such as 5000) to improve model accuracy.
 - To test, you can test the model by clicking the Input dropdown and selecting 'File', then uploading a sample image.
