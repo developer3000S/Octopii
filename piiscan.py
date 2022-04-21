@@ -162,7 +162,7 @@ def predict(image_path):
 
     except (TypeError, ValueError):
         print("Not a valid image format: " + str (image_path))
-        traceback.print_exc()
+        # traceback.print_exc()
 
     except (KeyError):
         pass
@@ -171,7 +171,7 @@ def predict(image_path):
 
     except (Exception):
         print("Unknown error while reading: " + str (image_path))
-        traceback.print_exc()
+        # traceback.print_exc()
     
     return (pii_type, country_of_origin, confidence_score)
 

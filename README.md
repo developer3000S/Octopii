@@ -44,32 +44,60 @@ Not a valid image format: pii_list/aadhaar/aadhaar-8.gif
 
 [
     {
-        "asset_type": "Bank",
-        "confidence": 100.0,
-        "file_name": "passbook",
-        "extension": "jpeg",
-        "path": "pii_list/bank/passbook.jpeg"
-    },
-    {
-        "asset_type": "Photo",
-        "confidence": 99.98,
-        "file_name": "IMG-20200331-WA0037",
+        "asset_type": Credit and Debit Cards,
+        "country_of_origin": "International",
+        "confidence": 100,
+        "file_name": "credit-card.jpg",
         "extension": "jpg",
-        "path": "pii_list/photos/IMG-20200331-WA0037.jpg"
+        "path": "https://pii-carbonconsole.fra1.digitaloceanspaces.com/credit-card.jpg"
     },
     {
         "asset_type": "PAN",
-        "confidence": 100.0,
-        "file_name": "pan-7",
+        "country_of_origin": "IN",
+        "confidence": 100,
+        "file_name": "dummy-PAN-India.jpg",
         "extension": "jpg",
-        "path": "pii_list/pan/pan-7.jpg"
+        "path": "https://pii-carbonconsole.fra1.digitaloceanspaces.com/dummy-PAN-India.jpg"
     },
     {
-        "asset_type": "Aadhaar",
-        "confidence": 97.31,
-        "file_name": "aadhaar-14",
+        "asset_type": Aadhaar,
+        "country_of_origin": "IN",
+        "confidence": 100,
+        "file_name": "dummy-aadhaar.jpg",
         "extension": "jpg",
-        "path": "pii_list/aadhaar/aadhaar-14.jpg"
+        "path": "https://pii-carbonconsole.fra1.digitaloceanspaces.com/dummy-aadhaar.jpg"
+    },
+    {
+        "asset_type": Driver License,
+        "country_of_origin": "International",
+        "confidence": 100,
+        "file_name": "dummy-drivers-license-nebraska-us.jpg",
+        "extension": "jpg",
+        "path": "https://pii-carbonconsole.fra1.digitaloceanspaces.com/dummy-drivers-license-nebraska-us.jpg"
+    },
+    {
+        "asset_type": Passport,
+        "country_of_origin": "International",
+        "confidence": 100,
+        "file_name": "dummy-passport-britain.jpg",
+        "extension": "jpg",
+        "path": "https://pii-carbonconsole.fra1.digitaloceanspaces.com/dummy-passport-britain.jpg"
+    },
+    {
+        "asset_type": Passport,
+        "country_of_origin": "International",
+        "confidence": 100,
+        "file_name": "dummy-passport-india.jpg",
+        "extension": "jpg",
+        "path": "https://pii-carbonconsole.fra1.digitaloceanspaces.com/dummy-passport-india.jpg"
+    },
+    {
+        "asset_type": "Signature",
+        "country_of_origin": null,
+        "confidence": 7,
+        "file_name": "dummy-signature.png",
+        "extension": "png",
+        "path": "https://pii-carbonconsole.fra1.digitaloceanspaces.com/dummy-signature.png"
     }
 ]
 ```
