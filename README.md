@@ -96,9 +96,10 @@ Since our current dataset is quite small, we could benefit from a large Keras mo
 
 *Tip: segregate your image assets into folders with the folder name being the same as the class name. You can then drag and drop a folder into the upload dialog.*
 
+- Click '+ Add a class' at the bottom of the page to add more classes with data and repeat. You can make the classes more specific, such as "Goa Driver License Old Format".
+
 **Note: Only upload the same as the class name, for example, the German Passport class must have German Passport pictures. Uploading the wrong data to the wrong class will confuse the machine learning algorithms.** 
 
-- Click '+ Add a class' at the bottom of the page to add more classes with data and repeat. You can make the classes more specific, such as "Goa Driver License Old Format".
 - Verify the classes and images one last time. Once you're ready, click on the 'Train Model' button. You can increase the epoch size (such as 5000) to improve model accuracy.
 - To test, you can test the model by clicking the Input dropdown and selecting 'File', then uploading a sample image.
 - Once you're ready, click the 'Export Model' button. In the dialog that pops up, select the 'Tensorflow' tab (not Tensorflow.js) and select the 'Keras' radio button, then click 'Download my model' to export the newly generated model. Extract the downloaded zip file and paste the `keras_model.h5` file and `labels.txt` file into the `models/` directory in piiscan.
