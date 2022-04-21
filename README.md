@@ -5,11 +5,11 @@ Piiscan is an open-source AI-powered Personal Identifiable Information (PII) sca
 ## Working
 Piiscan uses Tesseract's Optical Character Recognition (OCR) and Keras' Convolutional Neural Networks (CNN) models to detect various forms of personal identifiable information that may be leaked on a publicly facing location. This is done via:
 
-1. Importing and cleaning image(s)
+### 1. Importing and cleaning image(s)
 
 The image is imported via OpenCV and Python Imaging Library (PIL) and is cleaned, deskewed and rotated for scanning.
 
-2. Performing image classification and Optical Character Recognition (OCR)
+### 2. Performing image classification and Optical Character Recognition (OCR)
 
 The image is scanned for features such as an ISO/IEC 7810 card specification, colors, location of text, photos, holograms etc. This is done by passing it and comparing it against a trained model. This may have one of the following outcomes per PII:
 
