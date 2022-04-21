@@ -11,7 +11,7 @@ The image is imported via OpenCV and Python Imaging Library (PIL) and is cleaned
 
 2. Performing image classification and Optical Character Recognition (OCR)
 
-The image is scanned for features such as an ISO/IEC 7810 card specification, colors, location of text, photos, holograms etc. This is done by passing it and comparing it against a trained model. This may be done in four parts:
+The image is scanned for features such as an ISO/IEC 7810 card specification, colors, location of text, photos, holograms etc. This is done by passing it and comparing it against a trained model. This may have one of the following outcomes per PII:
 
 - **Best case** (score >=90): The image is sent into the image classifier algorithm to be scanned for features such as an ISO/IEC 7810 card specification, colors, location of text, photos, holograms etc. If it is successfully classified as a type of PII, OCR is performed on it looking for particular words and strings as a final check. When both of these are confirmed, the result from Piiscan is extremely reliable.
 
